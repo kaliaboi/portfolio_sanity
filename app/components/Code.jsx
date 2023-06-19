@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Prism from "prismjs";
-import "prismjs/themes/prism-atom-dark.css";
+import "prismjs/themes/prism-tomorrow.css";
 
 export default function Code({ value }) {
   useEffect(() => {
