@@ -34,7 +34,7 @@ const WorkSection: FC<WorkSectionProps> = ({ projects }) => {
         className="work-cards flex flex-col gap-6 mt-6"
       >
         {projects.map((project: any) => (
-          <WorkCard project={project} />
+          <WorkCard project={project} key={project.id} />
         ))}
       </motion.div>
     </div>
