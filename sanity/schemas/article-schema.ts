@@ -1,6 +1,6 @@
-const project = {
-  name: "project",
-  title: "Projects",
+const article = {
+  name: "article",
+  title: "Article",
   type: "document",
   fields: [
     {
@@ -9,45 +9,20 @@ const project = {
       type: "string",
     },
     {
+      name: "description",
+      title: "Description",
+      type: "text",
+    },
+    {
+      name: "publishDate",
+      title: "Publish Date",
+      type: "date",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: { source: "name" },
-    },
-    {
-      name: "cover",
-      title: "Cover",
-      type: "image",
-      options: { hotspot: true },
-      fields: [
-        {
-          name: "alt",
-          title: "Alt",
-          type: "string",
-        },
-      ],
-    },
-    {
-      name: "deviceImages",
-      title: "Device Images",
-      type: "array",
-      of: [
-        {
-          type: "image",
-          fields: [
-            {
-              name: "alt",
-              title: "Alt",
-              type: "string",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "url",
-      title: "URL",
-      type: "url",
     },
     {
       name: "content",
@@ -93,4 +68,4 @@ const project = {
   ],
 };
 
-export default project;
+export default article;

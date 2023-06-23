@@ -1,6 +1,6 @@
 import Code from "@/app/components/Code";
 import { Button } from "@/components/ui/button";
-import { getProject, urlFor } from "@/sanity/sanity-utils";
+import { getPost, getProject, urlFor } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -24,9 +24,9 @@ const myPortableTextComponents = {
   },
 };
 
-const Project = async ({ params }: any) => {
-  const slug = params.project;
-  const project = await getProject(slug);
+const Post = async ({ params }: any) => {
+  const slug = params.post;
+  const project = await getPost(slug);
   return (
     <div className="container mx-auto max-w-2xl flex flex-col p-4 md:p-6 text-slate-900 dark:text-slate-50 text-[16px] leading-6 prose dark:prose-invert mt-12 font-[500]">
       <div className="flex">
@@ -48,4 +48,4 @@ const Project = async ({ params }: any) => {
   );
 };
 
-export default Project;
+export default Post;

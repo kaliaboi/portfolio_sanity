@@ -45,3 +45,32 @@ export async function getProject(slug: string) {
   );
   return projects;
 }
+
+export async function getPosts() {
+  const posts = await sanityClient.fetch(
+    groq`*[_type == "article"]{
+            _id,
+            _createdAt,
+            name,
+            "slug": slug.current,
+            publishDate,
+            description,
+        }`
+  );
+  return posts;
+}
+
+export async function getPost(slug: string) {
+  const post = await sanityClient.fetch(
+    groq`*[_type == "article" && slug.current == $slug][0]{
+            _id,
+            _createdAt,
+            name,
+            "slug": slug.current,
+            publishDate,
+            content
+        }`,
+    { slug }
+  );
+  return post;
+}

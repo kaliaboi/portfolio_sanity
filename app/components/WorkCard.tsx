@@ -19,10 +19,6 @@ const WorkCard: FC<WorkCardProps> = ({ project }) => {
     >
       <Link href={`work/${project.slug}`}>
         <div className="aspect-video w-full relative cursor-pointer">
-          <div className="z-50 w-full backdrop-blur-2xl bg-white/70 bottom-0 absolute px-4 py-2">
-            <p className="text-slate-900">{project.name}</p>
-            <p className="text-slate-500">Product Design / 2023</p>
-          </div>
           <img
             className={`z-10 transition-all absolute duration-200 ${
               hovering ? "opacity-0" : "opacity-100"
@@ -37,6 +33,12 @@ const WorkCard: FC<WorkCardProps> = ({ project }) => {
             src="/test-2.png"
             alt=""
           />
+        </div>
+        <div className="mt-2 font-[500]">
+          <p className="text-slate-900 dark:text-slate-50">{project.name}</p>
+          <p className="text-slate-500 dark:text-slate-400">
+            Product Design / 2023
+          </p>
         </div>
       </Link>
     </motion.div>
