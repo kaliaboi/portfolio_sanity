@@ -17,7 +17,7 @@ const Posts = async () => {
         </Link>
       </div>
       {posts.map((post: any) => (
-        <Link href={`posts/${post.slug}`} className="my-6">
+        <Link href={`posts/${post.slug}`} className="my-6" key={post.id}>
           <p className="dark:text-white text-sm">{post.publishDate}</p>
           <p className="dark:text-white text-xl mb-6 mt-2">{post.name}</p>
           <p className="prose dark:prose-invert">
